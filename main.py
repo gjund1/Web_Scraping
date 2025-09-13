@@ -1,5 +1,12 @@
-# Écrire le message à l'aide de la fonction print()
-print("J'apprends Python !")
+# Création des variables nom et age
+nom = "Jean"
+age = 25
 
-#Afficher le résulat d'un calcul
-print(17 + 35 * 2)
+# Affichage de la phrase avec les variables
+print(f"Je m'appelle {nom} et j'ai {age} ans.")
+
+# Modification de la variable age
+age = age + 10  #ou "age += 10"
+
+# Affichage de la phrase mise à jour avec les variables
+print(f"Je m'appelle {nom} et j'ai {age} ans maintenant.")
