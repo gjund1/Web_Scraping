@@ -1,12 +1,17 @@
-# Création des variables nom et age
+# Créer les quatres variables
 nom = "Jean"
 age = 25
+taille = 1.80
+est_etudiant = True
 
-# Affichage de la phrase avec les variables
-print(f"Je m'appelle {nom} et j'ai {age} ans.")
+# Afficher les valeurs des quatres variables
+print(f"Nom: {nom}")
+print(f"Age: {age}")
+print(f"Taille: {taille}")
+print(f"Est étudiant: {est_etudiant}")
 
-# Modification de la variable age
-age = age + 10  #ou "age += 10"
-
-# Affichage de la phrase mise à jour avec les variables
-print(f"Je m'appelle {nom} et j'ai {age} ans maintenant.")
+# Afficher les types des quatres variables
+print(f"Type nom: {type(nom)}")
+print(f"Type age: {type(age)}")
+print(f"Type taille: {type(taille)}")
+print(f"Type est étudiant: {type(est_etudiant)}")
