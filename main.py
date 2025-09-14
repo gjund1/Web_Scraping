@@ -1,17 +1,18 @@
-# Créer les quatres variables
-nom = "Jean"
-age = 25
-taille = 1.80
-est_etudiant = True
+# 1. Création de la liste fruits
+fruits = ["pomme", "banane", "orange"]
 
-# Afficher les valeurs des quatres variables
-print(f"Nom: {nom}")
-print(f"Age: {age}")
-print(f"Taille: {taille}")
-print(f"Est étudiant: {est_etudiant}")
+# 2. Ajout de "kiwi"
+fruits.append("kiwi")
 
-# Afficher les types des quatres variables
-print(f"Type nom: {type(nom)}")
-print(f"Type age: {type(age)}")
-print(f"Type taille: {type(taille)}")
-print(f"Type est étudiant: {type(est_etudiant)}")
+# 3. Suppression de "orange"
+fruits.remove("orange")
+
+# 4. Modification du deuxième élément en "ananas"
+fruits[1] = "ananas"
+
+# 5. Affichage de la longueur de la liste
+print("La liste fruits contient", len(fruits), "éléments.")
+
+# 6. Tri de la liste par ordre alphabétique et affichage
+fruits.sort()
+print(fruits)
