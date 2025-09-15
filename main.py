@@ -1,18 +1,17 @@
-# 1. Création de la liste fruits
-fruits = ["pomme", "banane", "orange"]
+# 1. Création du dictionnaire fruits 
+fruits = {"pomme": "rouge", "banane": "jaune", "orange": "orange"} 
 
-# 2. Ajout de "kiwi"
-fruits.append("kiwi")
+# 2. Ajout de la clé "kiwi" 
+fruits["kiwi"] = "vert"
 
-# 3. Suppression de "orange"
-fruits.remove("orange")
+ # 3. Accès à la valeur correspondant à la clé "banane" 
+couleur_banane = fruits["banane"] 
 
-# 4. Modification du deuxième élément en "ananas"
-fruits[1] = "ananas"
+# 4. Modification de la valeur associée à la clé "pomme" 
+fruits["pomme"] = "vert" 
 
-# 5. Affichage de la longueur de la liste
-print("La liste fruits contient", len(fruits), "éléments.")
+# 5. Suppression de la clé "orange" 
+del fruits["banane"] 
 
-# 6. Tri de la liste par ordre alphabétique et affichage
-fruits.sort()
-print(fruits)
+# 6. Affichage des clés restantes dans le dictionnaire
+print(fruits.keys())
