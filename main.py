@@ -1,34 +1,48 @@
-nombre1 = input("Entrez un nombre entier: ")
-nombre2 = input("Entrez un nombre entier: ")
+# Récupérer la saisie de l'utilisateur
+nombres = input("Saisissez une liste de nombres séparés par des virgules: ")
 
-# isnumeric() permet de vérifier si la chaîne de caractères est un nombre
-if not nombre1.isnumeric() or not nombre2.isnumeric():
-    print("Erreur: les deux nombres doivent être des nombres entiers")
-    raise SystemExit("Fin du programme")
+# Séparer l'ensemble des nombres et les insérer dans une liste
+liste = nombres.split(",")
+# Afficher la liste des nombres
+print("Liste des nombres:", liste)
 
-nombre1 = int(nombre1)
-nombre2 = int(nombre2)
-
-operation = input("Entrez l'opération souhaitée ['+', '-', '*' ou '/']: ")
-
-if operation not in ["+", "-", "*", "/"]:
-    print("Erreur: le symbole d'opération doit être '+', '-', '*' ou '/'.")
-    raise SystemExit("Fin du programme")
+# A ce stade liste est une liste de chaînes de caractères
+# Convertir chaque élément de la liste en entier
+liste_entiers = []
+for nombre in liste:
+    nombre_entier = int(nombre)
+    liste_entiers.append(nombre_entier)
 
 
-if operation == "+":
-    resultat = nombre1 + nombre2
-elif operation == "-":
-    resultat = nombre1 - nombre2
-elif operation == "*":
-    resultat = nombre1 * nombre2
-elif operation == "/":
-    # Vérifie si la variable `nombre2` n'est pas nulle pour la division
-    if nombre2 == 0:
-        print("Erreur: impossible de diviser par zéro.")
-        raise SystemExit("Fin du programme")
+# Calculer la somme des nombres
+somme = 0
+for nombre in liste_entiers:
+    somme += nombre
 
-    resultat = round(nombre1 / nombre2, 2)
+# Equivalent à:
+# somme = sum(liste_entiers)
 
-# Affiche le résultat
-print(f"Le résultat de l'opération est: {round(resultat, 2)}")
+print("Somme des nombres:", somme)
+
+# Effectuer la moyenne à l'aide de la somme des nombre
+moyenne = somme / len(liste_entiers)
+
+print("Moyenne des nombres:", moyenne)
+
+# Trouver combien de nombres de la liste sont supérieurs à la moyenne
+nombre_au_dessus_moyenne = 0
+for nombre in liste:
+    if nombre > moyenne:
+        nombre_au_dessus_moyenne += 1
+print("Nombre de nombres supérieurs à la moyenne:", nombre_au_dessus_moyenne)
+
+# Equivalent à:
+# nombre_au_dessus_moyenne = 0
+# idx = 0
+# while idx < len(liste_entiers):
+#     if liste_entiers[idx] > moyenne:
+#         nombre_au_dessus_moyenne += 1
+#     idx += 1
+# Attention! Il est déconseillé d'utiliser la boucle while pour parcourir une liste.
+
+print("Nombre de nombres pairs:", nombre_au_dessus_moyenne)
