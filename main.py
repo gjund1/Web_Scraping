@@ -1,48 +1,28 @@
-# Récupérer la saisie de l'utilisateur
-nombres = input("Saisissez une liste de nombres séparés par des virgules: ")
-
-# Séparer l'ensemble des nombres et les insérer dans une liste
-liste = nombres.split(",")
-# Afficher la liste des nombres
-print("Liste des nombres:", liste)
-
-# A ce stade liste est une liste de chaînes de caractères
-# Convertir chaque élément de la liste en entier
-liste_entiers = []
-for nombre in liste:
-    nombre_entier = int(nombre)
-    liste_entiers.append(nombre_entier)
+# Définition de la fonction salaire_mensuel
+def salaire_mensuel(salaire_annuel):
+    return salaire_annuel / 12
 
 
-# Calculer la somme des nombres
-somme = 0
-for nombre in liste_entiers:
-    somme += nombre
+# Définition de la fonction salaire_hebdomadaire
+def salaire_hebdomadaire(salaire_mensuel):
+    return salaire_mensuel / 4
 
-# Equivalent à:
-# somme = sum(liste_entiers)
 
-print("Somme des nombres:", somme)
+# Définition de la fonction salaire_horaire
+def salaire_horaire(salaire_hebdomadaire, heures_travaillees):
+    return salaire_hebdomadaire / heures_travaillees
 
-# Effectuer la moyenne à l'aide de la somme des nombre
-moyenne = somme / len(liste_entiers)
 
-print("Moyenne des nombres:", moyenne)
+# Demande à l'utilisateur de saisir son salaire annuel
+salaire_annuel = float(input("Entrez votre salaire annuel : "))
+# Demande à l'utilisateur de saisir le nombre d'heures travaillées par semaine
+heures_travaillees = float(
+    input("Entrez le nombre d'heures travaillées par semaine : "))
 
-# Trouver combien de nombres de la liste sont supérieurs à la moyenne
-nombre_au_dessus_moyenne = 0
-for nombre in liste:
-    if nombre > moyenne:
-        nombre_au_dessus_moyenne += 1
-print("Nombre de nombres supérieurs à la moyenne:", nombre_au_dessus_moyenne)
+# Calcul du salaire horaire
+mensuel = salaire_mensuel(salaire_annuel)
+hebdomadaire = salaire_hebdomadaire(mensuel)
+horaire = salaire_horaire(hebdomadaire, heures_travaillees)
 
-# Equivalent à:
-# nombre_au_dessus_moyenne = 0
-# idx = 0
-# while idx < len(liste_entiers):
-#     if liste_entiers[idx] > moyenne:
-#         nombre_au_dessus_moyenne += 1
-#     idx += 1
-# Attention! Il est déconseillé d'utiliser la boucle while pour parcourir une liste.
-
-print("Nombre de nombres pairs:", nombre_au_dessus_moyenne)
+# Affichage du résultat
+print("Votre salaire horaire est de", horaire, "euros.")
